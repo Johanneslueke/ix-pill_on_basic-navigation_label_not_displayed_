@@ -6,9 +6,9 @@ import { ModalComponent } from './modal/modal.component';
   template: `
   <button (click)="open()">open</button>
 
-  <app-modal let-modal>
+  <app-modal >
     <div>
-        
+        <p>test paragraph</p>
     </div>
   </app-modal>
   `,

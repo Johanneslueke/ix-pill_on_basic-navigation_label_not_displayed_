@@ -1,7 +1,8 @@
-<ng-template let-modal>
+<ng-template let-modal #projectedTemplatedRef>
     <ix-modal-header *ngIf=" modal.data.header">  modal.data.header </ix-modal-header>
         <ix-modal-content>
-            Message text lorem ipsum: {{ modal.data }}
+          <ng-container [ngTemplateOutlet]="projectedTemplatedRef" 
+          [ngTemplateOutletContext]="modal.data"></ng-container>
         </ix-modal-content>
         <ix-modal-footer>
           <ix-button
