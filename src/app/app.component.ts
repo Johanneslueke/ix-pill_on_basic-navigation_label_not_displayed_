@@ -17,8 +17,10 @@ export class AppComponent {
 
   @ViewChild(ModalComponent) modal !: ModalComponent;
 
-  open(){
-    this.modal.openModal({
+  pressed =  false;
+  async open(){
+    this.pressed = !this.pressed;
+    await this.modal.openModal({
       header: "test"
     })
   }
