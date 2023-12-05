@@ -1,0 +1,18 @@
+<ng-template let-modal>
+    <ix-modal-header *ngIf=" modal.data.header">  modal.data.header </ix-modal-header>
+        <ix-modal-content>
+            Message text lorem ipsum: {{ modal.data }}
+        </ix-modal-content>
+        <ix-modal-footer>
+          <ix-button
+            outline
+            class="dismiss-modal"
+            (click)="modal.dismiss('dismiss')"
+          >
+            Cancel
+          </ix-button>
+          <ix-button class="close-modal" (click)="modal.close('okay')">
+            OK
+          </ix-button>
+        </ix-modal-footer>
+</ng-template>
