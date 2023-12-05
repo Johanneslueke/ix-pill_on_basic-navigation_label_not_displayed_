@@ -1,5 +1,5 @@
-import { Component, ContentChild, TemplateRef, inject } from '@angular/core';
-import { ModalService } from '@siemens/ix-angular';
+import { Component, ContentChild, TemplateRef, ViewChild, inject } from '@angular/core';
+import { IxActiveModal, ModalService } from '@siemens/ix-angular';
 
 interface ModalData {
   header ?: string,
@@ -15,6 +15,8 @@ interface ModalData {
 export class ModalComponent {
 
   header ?: string;
+
+  @ViewChild<IxActiveModal> modal !: IxActiveModal;
   
 
 

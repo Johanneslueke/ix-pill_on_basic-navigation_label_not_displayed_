@@ -7,11 +7,7 @@ import { ModalService } from '@siemens/ix-angular';
   template: `
   <button (click)="open()">open</button>
   <div *ngIf="pressed"><span> YOU PRESSED THE BUTTON</span></div>
-  <app-modal >
-    <div>
-        <p>test paragraph</p>
-    </div>
-  </app-modal>
+ 
   `,
 })
 export class AppComponent {
