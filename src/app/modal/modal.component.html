@@ -1,19 +1,16 @@
-<ng-template let-modal #projectedTemplatedRef>
-    <ix-modal-header *ngIf=" modal.data.header">  modal.data.header </ix-modal-header>
-    <ix-modal-content>
-      <ng-container [ngTemplateOutlet]="projectedTemplatedRef" 
-      [ngTemplateOutletContext]="modal.data"></ng-container>
-    </ix-modal-content>
-    <ix-modal-footer>
-      <ix-button
-        outline
-        class="dismiss-modal"
-        (click)="modal.dismiss('dismiss')"
-      >
-        Cancel
-      </ix-button>
-      <ix-button class="close-modal" (click)="modal.close('okay')">
-        OK
-      </ix-button>
-    </ix-modal-footer>
-</ng-template>
+<ix-modal-header *ngIf="header"> {{ header }} </ix-modal-header>
+<ix-modal-content>
+ 
+</ix-modal-content>
+<ix-modal-footer>
+  <ix-button
+    outline
+    class="dismiss-modal"
+   
+  >
+    Cancel
+  </ix-button>
+  <ix-button class="close-modal" >
+    OK
+  </ix-button>
+</ix-modal-footer>

@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core'; 
+import { Component, ViewChild, inject } from '@angular/core'; 
 import { ModalComponent } from './modal/modal.component';
+import { ModalService } from '@siemens/ix-angular';
 @Component({
   selector: 'app-root',
 
@@ -16,12 +17,16 @@ import { ModalComponent } from './modal/modal.component';
 export class AppComponent {
 
   @ViewChild(ModalComponent) modal !: ModalComponent;
+  modalservice = inject(ModalService);
 
   pressed =  false;
   async open(){
     this.pressed = !this.pressed;
-    await this.modal.openModal({
-      header: "test"
+    await this.modalservice.open({
+      content: ModalComponent,
+      data: {
+        header: "TEST HEADER"
+      }
     })
   }
   

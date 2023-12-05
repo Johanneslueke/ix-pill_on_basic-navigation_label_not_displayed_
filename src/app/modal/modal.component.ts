@@ -14,24 +14,7 @@ interface ModalData {
 })
 export class ModalComponent {
 
-  @ContentChild(TemplateRef) projectedTemplatedRef !: TemplateRef<unknown>
-
-  modalService = inject(ModalService);
-
-  async openModal(data : ModalData){
-    const instance = await this.modalService.open({
-      content: this.projectedTemplatedRef,
-      data: data
-    });
-
-    instance.onClose.on(x => {
-      console.log( x )
-    });
-
-    instance.onDismiss.on( x => {
-      console.log(x)
-    })
-  }
+  header ?: string;
   
 
 
